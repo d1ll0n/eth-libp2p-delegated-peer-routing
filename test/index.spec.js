@@ -4,7 +4,7 @@
 const expect = require('chai').expect
 const IPFSFactory = require('ipfsd-ctl')
 const async = require('async')
-const PeerID = require('peer-id')
+const PeerID = require('eth-peer-id')
 
 const DelegatedPeerRouting = require('../src')
 const factory = IPFSFactory.create({ type: 'go' })
@@ -169,13 +169,13 @@ describe('DelegatedPeerRouting', function () {
         port: opts.port,
         host: opts.host
       })
-
+      let fin = 0
       // This is one of the default Bootstrap nodes, but we're not connected to it
       // so we'll test with it.
-      router.findPeer('QmSoLV4Bbm51jM9C4gDYZQ9Cy3U6aXMJDAbzgu2fzaDs64', (err, peer) => {
+      return router.findPeer('QmSoLV4Bbm51jM9C4gDYZQ9Cy3U6aXMJDAbzgu2fzaDs64', (err, peer) => {
         expect(err).to.be.an('error')
         expect(peer).to.eql(undefined)
-        done()
+        if (!fin++) done()
       })
     })
   })

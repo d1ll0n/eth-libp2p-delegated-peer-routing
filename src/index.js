@@ -1,7 +1,7 @@
 'use strict'
 
 const PeerInfo = require('peer-info')
-const PeerId = require('peer-id')
+const PeerId = require('eth-peer-id')
 const dht = require('ipfs-api/src/dht')
 const defaultConfig = require('ipfs-api/src/utils/default-config')
 

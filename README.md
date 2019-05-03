@@ -1,14 +1,11 @@
-# js-libp2p-delegated-peer-routing
+# eth-libp2p-delegated-peer-routing
 Leverage other peers in the network to perform Peer Routing calls.
 
-## Lead Maintainer
-
-[Jacob Heun](https://github.com/jacobheun)
 
 ## Example
 
 ```js
-const DelegatedPeerRouting = require('libp2p-delegated-routing')
+const DelegatedPeerRouting = require('eth-libp2p-delegated-routing')
 
 // default is to use ipfs.io
 const routing = new DelegatedPeerRouing()
